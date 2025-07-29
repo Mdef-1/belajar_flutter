@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/main_layout.dart';
+import 'package:flutter_project/stack_widget/stack_dua.dart';
+import 'package:flutter_project/stack_widget/stack_satu.dart';
+
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -9,73 +13,31 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyHomePage(title: 'Belajar Flutter'),
-      title: 'Belajar Flutter',
-      centerTitle: true
-      
+    return MaterialApp(
+      debugShowCheckedModeBanner: true,
+      home: StackTwo(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter += 3;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: NewWidget(counter: _counter),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
-}
-
-class NewWidget extends StatelessWidget {
-  const NewWidget({
+class HelloFultter extends StatelessWidget {
+  const HelloFultter({
     super.key,
-    required int counter,
-  }) : _counter = counter;
-
-  final int _counter;
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          const Text(
-            'You have pushed the button this many times:',
+    return MainLayout(
+      title: 'Belajar Flutter',
+      body: Center(
+        child: Text('Hello, Flutter',
+          style: TextStyle(
+            fontSize: 24,
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            backgroundColor: Colors.blueAccent,
           ),
-          Text(
-            '$_counter',
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
-        ],
+        ),
       ),
     );
   }

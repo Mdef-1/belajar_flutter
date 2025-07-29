@@ -13,12 +13,7 @@ class MainLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-        centerTitle: true,
-        backgroundColor: Colors.amber,
-        ),
-      body: body,
+      body: Center(child: body),
     );
   }
 }
