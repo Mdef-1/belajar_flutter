@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/latihan/image.dart';
+import 'package:flutter_project/latihan/latihan_tiga.dart';
 import 'package:flutter_project/main_layout.dart';
-import 'package:flutter_project/stack_widget/stack_dua.dart';
-import 'package:flutter_project/stack_widget/stack_satu.dart';
-
-
 void main() {
   runApp(MyApp());
 }
@@ -15,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: true,
-      home: StackTwo(),
+      home: NewsCard(),
     );
   }
 }
@@ -32,7 +30,7 @@ class HelloFultter extends StatelessWidget {
       body: Center(
         child: Text('Hello, Flutter',
           style: TextStyle(
-            fontSize: 24,
+            fontSize: 40,
             color: Colors.black,
             fontWeight: FontWeight.bold,
             backgroundColor: Colors.blueAccent,

@@ -12,9 +12,9 @@ class ContainerDua extends StatelessWidget {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        margin: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             colors: [
               Colors.lightBlueAccent,
               Colors.redAccent,
@@ -26,23 +26,51 @@ class ContainerDua extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ContainerSatu(),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ContainerSatu(),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'Pindah Ke Halaman',
+                  style: TextStyle(color: Colors.white),
                 ),
-              );
-            },
-            child: Text(
-              'Pindah Ke Halaman',
-              style: TextStyle(color: Colors.white),
-            ),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.purple,
-            ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.purple,
+                ),
+              ),
+              const SizedBox(height: 20),
+              Wrap(
+                spacing: 20,
+                runSpacing: 20,
+                children: List.generate(6, (index) {
+                  return Card(
+                    elevation: 13,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      side: BorderSide(color: Colors.white, width: 30),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: Image.network(
+                        'https://picsum.photos/200?image=${10 + index}',
+                        width: 140,
+                        height: 140,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  );
+                }),
+              ),
+            ],
           ),
         ),
       ),
