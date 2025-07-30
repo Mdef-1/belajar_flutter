@@ -10,9 +10,6 @@ class MyWidget extends StatelessWidget {
       title: 'Image with Stack', 
       body: Stack(
         children: [
-          Image.network(
-            
-          ),
         ],
       ),
     );

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/latihan/image.dart';
-import 'package:flutter_project/latihan/latihan_tiga.dart';
+import 'package:flutter_project/grid_view/grid_satu.dart';
 import 'package:flutter_project/main_layout.dart';
 void main() {
   runApp(MyApp());
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: true,
-      home: NewsCard(),
+      home: GridSatu(),
     );
   }
 }
