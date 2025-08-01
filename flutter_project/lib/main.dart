@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/grid_view/grid_satu.dart';
+import 'package:flutter_project/Ujian/bundle_screen.dart';
+import 'package:flutter_project/catalog_product/catalog.dart';
+import 'package:flutter_project/form_widget/input_screen.dart';
 import 'package:flutter_project/main_layout.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -12,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: true,
-      home: GridSatu(),
+      home: Bundle(),
     );
   }
 }
@@ -27,7 +30,8 @@ class HelloFultter extends StatelessWidget {
     return MainLayout(
       title: 'Belajar Flutter',
       body: Center(
-        child: Text('Hello, Flutter',
+        child: Text(
+          'Hello, Flutter',
           style: TextStyle(
             fontSize: 40,
             color: Colors.black,
